@@ -30,12 +30,12 @@ export function Contact() {
             <div className="bg-white/10 border border-white/15 p-4 rounded-2xl">
               <strong>Email</strong>
               <br />
-              <span className="text-white/75">info@dhgcleaning.ca</span>
+              <a href="mailto:jordan.jdjdj@gmail.com" className="text-white/75 hover:text-white transition-colors">jordan.jdjdj@gmail.com</a>
             </div>
             <div className="bg-white/10 border border-white/15 p-4 rounded-2xl">
               <strong>Phone</strong>
               <br />
-              <span className="text-white/75">+1 (514) 000-0000</span>
+              <a href="tel:+14382207424" className="text-white/75 hover:text-white transition-colors">+1 (438) 220-7424</a>
             </div>
           </div>
         </div>
