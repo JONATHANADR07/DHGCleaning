@@ -1,29 +1,16 @@
-import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
-import { Products } from "@/components/products"
-import { ProductCatalog } from "@/components/product-catalog"
-import { About } from "@/components/about"
-import { Features } from "@/components/features"
-import { Testimonials } from "@/components/testimonials"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Products />
-        <ProductCatalog />
-        <About />
-        <Features />
-        <Testimonials />
-        <Contact />
+    <div className="flex min-h-screen items-center justify-center font-sans">
+      <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center sm:items-start sm:text-left">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-4xl font-bold tracking-tight">
+            DHG CLEANING
+          </h1>
+          <p className="max-w-md text-lg text-muted-foreground">
+            To get started, send a prompt or modify this page directly.
+          </p>
+        </div>
       </main>
-      <Footer />
-      <WhatsAppButton />
-    </>
-  )
+    </div>
+  );
 }

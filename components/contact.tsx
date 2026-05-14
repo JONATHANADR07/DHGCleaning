@@ -12,7 +12,7 @@ export function Contact() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-[#1e3a5f] text-white" id="contact">
+    <section className="py-20 bg-gradient-to-br from-primary to-[#0b4f48] text-white" id="contact">
       <div className="w-[min(1180px,92%)] mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
         <div className="animate-fade-up">
           <h2 className="text-[clamp(34px,4vw,52px)] leading-[1.05] mb-4 text-balance">
@@ -30,12 +30,12 @@ export function Contact() {
             <div className="bg-white/10 border border-white/15 p-4 rounded-2xl">
               <strong>Email</strong>
               <br />
-              <a href="mailto:jordan.jdjdj@gmail.com" className="text-white/75 hover:text-white transition-colors">jordan.jdjdj@gmail.com</a>
+              <span className="text-white/75">info@dhgcleaning.ca</span>
             </div>
             <div className="bg-white/10 border border-white/15 p-4 rounded-2xl">
               <strong>Phone</strong>
               <br />
-              <a href="tel:+14382207424" className="text-white/75 hover:text-white transition-colors">+1 (438) 220-7424</a>
+              <span className="text-white/75">+1 (514) 000-0000</span>
             </div>
           </div>
         </div>

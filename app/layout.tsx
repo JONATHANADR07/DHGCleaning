@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'DHG CLEANING | Professional Cleaning Products',
-  description: 'Professional cleaning products in Montreal. Wholesale and retail cleaning supplies for businesses, restaurants, offices, Airbnb hosts, property managers, and residential clients across Quebec.',
+  title: 'v0 App',
+  description: 'Created with v0',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
+    <html lang="en">
       <body className="font-sans antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
