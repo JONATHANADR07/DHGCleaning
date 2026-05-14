@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
   return (
-    <header className="min-h-[86vh] grid items-center py-20 bg-[radial-gradient(circle_at_top_right,rgba(15,118,110,0.18),transparent_34%),linear-gradient(135deg,#fff,#eef9f5)] overflow-hidden">
+    <header className="min-h-[86vh] grid items-center py-20 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_34%),linear-gradient(135deg,#fff,#f0f7ff)] overflow-hidden">
       <div className="w-[min(1180px,92%)] mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div className="animate-fade-up">
           <span className="inline-flex px-3.5 py-2 rounded-full border border-border bg-background text-accent font-extrabold text-sm mb-5 shadow-md">
