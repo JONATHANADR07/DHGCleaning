@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHG CLEANING - Professional Cleaning Supplies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0a0a0a',
+            accent: '#2563eb',
+            'accent-light': '#3b82f6',
+            'bg-light': '#f0f7ff',
+            'dark-blue': '#1e3a5f',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-white text-primary">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <span class="font-bold text-xl text-primary">DHG CLEANING</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#products" class="text-gray-600 hover:text-accent transition-colors">Products</a>
+          <a href="#catalog" class="text-gray-600 hover:text-accent transition-colors">Catalog</a>
+          <a href="#about" class="text-gray-600 hover:text-accent transition-colors">About</a>
+          <a href="#contact" class="text-gray-600 hover:text-accent transition-colors">Contact</a>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-4">
+          <a href="tel:+14382207424" class="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span>+1 (438) 220-7424</span>
+          </a>
+          <a href="#contact" class="bg-accent hover:bg-accent-light text-white px-5 py-2.5 rounded-full font-medium transition-colors">
+            Get Quote
+          </a>
+        </div>
+        
+        <button id="menuBtn" class="md:hidden p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4">
+      <div class="flex flex-col gap-4">
+        <a href="#products" class="text-gray-600 hover:text-accent transition-colors py-2">Products</a>
+        <a href="#catalog" class="text-gray-600 hover:text-accent transition-colors py-2">Catalog</a>
+        <a href="#about" class="text-gray-600 hover:text-accent transition-colors py-2">About</a>
+        <a href="#contact" class="text-gray-600 hover:text-accent transition-colors py-2">Contact</a>
+        <a href="#contact" class="bg-accent hover:bg-accent-light text-white px-5 py-2.5 rounded-full font-medium transition-colors text-center">
+          Get Quote
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 bg-gradient-to-br from-white to-bg-light relative overflow-hidden">
+    <div class="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <span class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            Trusted by 500+ Businesses
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6">
+            Professional <span class="text-accent">Cleaning Supplies</span> for Every Business
+          </h1>
+          <p class="text-lg text-gray-600 mb-8 max-w-xl">
+            Premium quality cleaning products, janitorial supplies, and sanitary solutions. Serving Montreal businesses with reliable delivery and competitive wholesale prices.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-10">
+            <a href="#catalog" class="bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-full font-semibold text-center transition-all transform hover:scale-105 shadow-lg shadow-accent/30">
+              Browse Catalog
+            </a>
+            <a href="tel:+14382207424" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-semibold text-center transition-all">
+              Call Us Now
+            </a>
+          </div>
+          <div class="flex items-center gap-8 text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Free Delivery 100$+</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Same-Day Shipping</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Wholesale Prices</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative hidden lg:block">
+          <div class="floating bg-white rounded-2xl shadow-2xl p-6 max-w-sm ml-auto">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-primary">Quality Guaranteed</p>
+                <p class="text-sm text-gray-500">ISO Certified Products</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <p class="text-2xl font-bold text-accent">500+</p>
+                <p class="text-xs text-gray-500">Products</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold text-accent">15+</p>
+                <p class="text-xs text-gray-500">Years</p>
+              </div>
+              <div>
+                <p class="text-2xl font-bold text-accent">98%</p>
+                <p class="text-xs text-gray-500">Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Product Categories</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive cleaning solutions for all industries</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="fade-in group bg-gradient-to-br from-bg-light to-white p-6 rounded-2xl border border-gray-100 hover:border-accent/30 hover:shadow-xl transition-all cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+            <svg class="w-7 h-7 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-primary mb-2">Liquid Cleaners</h3>
+          <p class="text-gray-500 text-sm">Disinfectants, degreasers, and all-purpose cleaners</p>
+        </div>
+        
+        <div class="fade-in group bg-gradient-to-br from-bg-light to-white p-6 rounded-2xl border border-gray-100 hover:border-accent/30 hover:shadow-xl transition-all cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+            <svg class="w-7 h-7 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-primary mb-2">Janitorial Supplies</h3>
+          <p class="text-gray-500 text-sm">Mops, brooms, trash bags, and equipment</p>
+        </div>
+        
+        <div class="fade-in group bg-gradient-to-br from-bg-light to-white p-6 rounded-2xl border border-gray-100 hover:border-accent/30 hover:shadow-xl transition-all cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+            <svg class="w-7 h-7 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-primary mb-2">Paper Products</h3>
+          <p class="text-gray-500 text-sm">Toilet paper, towels, napkins, and tissues</p>
+        </div>
+        
+        <div class="fade-in group bg-gradient-to-br from-bg-light to-white p-6 rounded-2xl border border-gray-100 hover:border-accent/30 hover:shadow-xl transition-all cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
+            <svg class="w-7 h-7 text-accent group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-lg text-primary mb-2">Safety & PPE</h3>
+          <p class="text-gray-500 text-sm">Gloves, masks, sanitizers, and protection gear</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Product Catalog</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Browse our complete selection of professional cleaning products</p>
+      </div>
+      
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        <button class="tab-btn active bg-accent text-white px-6 py-3 rounded-full font-medium transition-all" data-tab="liquids">Liquid Cleaners</button>
+        <button class="tab-btn bg-white text-gray-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition-all" data-tab="janitorial">Janitorial</button>
+        <button class="tab-btn bg-white text-gray-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition-all" data-tab="paper">Paper Products</button>
+        <button class="tab-btn bg-white text-gray-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition-all" data-tab="safety">Safety & PPE</button>
+      </div>
+      
+      <!-- Product Grids -->
+      <div id="liquids" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: LC-001</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">All-Purpose Cleaner</h3>
+          <p class="text-gray-500 text-sm mt-2">Professional grade multi-surface cleaner. 4L bottle.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$24.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: LC-002</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Hospital Grade Disinfectant</h3>
+          <p class="text-gray-500 text-sm mt-2">Kills 99.9% of germs. DIN registered. 4L bottle.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$34.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: LC-003</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Industrial Degreaser</h3>
+          <p class="text-gray-500 text-sm mt-2">Heavy-duty grease remover for kitchens. 4L bottle.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$29.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="janitorial" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: JN-001</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Commercial Mop System</h3>
+          <p class="text-gray-500 text-sm mt-2">Complete mop bucket with wringer and microfiber heads.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$89.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: JN-002</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Heavy Duty Trash Bags</h3>
+          <p class="text-gray-500 text-sm mt-2">35 gallon contractor bags. 100 count box.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$45.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: JN-003</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Push Broom Set</h3>
+          <p class="text-gray-500 text-sm mt-2">24-inch commercial push broom with handle.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$32.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="paper" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: PP-001</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Jumbo Roll Toilet Paper</h3>
+          <p class="text-gray-500 text-sm mt-2">2-ply commercial grade. Case of 12 rolls.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$54.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: PP-002</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Paper Towel Rolls</h3>
+          <p class="text-gray-500 text-sm mt-2">Centerpull dispensing. Case of 6 rolls.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$42.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: PP-003</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Facial Tissues</h3>
+          <p class="text-gray-500 text-sm mt-2">Premium 2-ply. Case of 30 boxes.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$38.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="safety" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: SF-001</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Nitrile Gloves</h3>
+          <p class="text-gray-500 text-sm mt-2">Powder-free, medical grade. Box of 100.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$18.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: SF-002</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Hand Sanitizer</h3>
+          <p class="text-gray-500 text-sm mt-2">70% alcohol gel formula. 4L pump bottle.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$24.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+          <div class="w-full h-40 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl mb-4 flex items-center justify-center">
+            <svg class="w-16 h-16 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <span class="text-xs text-accent font-medium">SKU: SF-003</span>
+          <h3 class="font-semibold text-lg text-primary mt-1">Face Masks</h3>
+          <p class="text-gray-500 text-sm mt-2">3-ply disposable masks. Box of 50.</p>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-2xl font-bold text-accent">$12.99</span>
+            <button class="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Add to Quote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Why Choose <span class="text-accent">DHG CLEANING</span>?</h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            With over 15 years of experience serving Montreal businesses, we understand the unique cleaning challenges faced by restaurants, hotels, offices, and healthcare facilities. Our commitment to quality and customer service sets us apart.
+          </p>
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Premium Quality</h3>
+                <p class="text-gray-500 text-sm">Only certified, professional-grade products</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Fast Delivery</h3>
+                <p class="text-gray-500 text-sm">Same-day delivery across Montreal</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Best Prices</h3>
+                <p class="text-gray-500 text-sm">Competitive wholesale pricing</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-primary mb-1">Expert Support</h3>
+                <p class="text-gray-500 text-sm">Dedicated team ready to help</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in bg-gradient-to-br from-accent to-dark-blue rounded-3xl p-8 text-white">
+          <h3 class="text-2xl font-bold mb-6">Our Numbers Speak</h3>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="text-center p-4 bg-white/10 rounded-2xl">
+              <p class="text-4xl font-bold">500+</p>
+              <p class="text-white/75 text-sm mt-1">Happy Clients</p>
+            </div>
+            <div class="text-center p-4 bg-white/10 rounded-2xl">
+              <p class="text-4xl font-bold">15+</p>
+              <p class="text-white/75 text-sm mt-1">Years Experience</p>
+            </div>
+            <div class="text-center p-4 bg-white/10 rounded-2xl">
+              <p class="text-4xl font-bold">1000+</p>
+              <p class="text-white/75 text-sm mt-1">Products Available</p>
+            </div>
+            <div class="text-center p-4 bg-white/10 rounded-2xl">
+              <p class="text-4xl font-bold">24/7</p>
+              <p class="text-white/75 text-sm mt-1">Customer Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-primary to-dark-blue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+          <p class="text-white/75 mb-8">Ready to streamline your cleaning supply needs? Contact us for a personalized quote or to learn more about our products.</p>
+          
+          <div class="space-y-6">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-white/50">Email</p>
+                <a href="mailto:jordan.jdjdj@gmail.com" class="font-medium hover:text-accent transition-colors">jordan.jdjdj@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-white/50">Phone</p>
+                <a href="tel:+14382207424" class="font-medium hover:text-accent transition-colors">+1 (438) 220-7424</a>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-white/50">Location</p>
+                <p class="font-medium">Montreal, Quebec, Canada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="fade-in">
+          <form class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium mb-2">First Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent placeholder-white/50 text-white" placeholder="John">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Last Name</label>
+                <input type="text" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent placeholder-white/50 text-white" placeholder="Doe">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium mb-2">Email</label>
+              <input type="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent placeholder-white/50 text-white" placeholder="john@company.com">
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium mb-2">Phone</label>
+              <input type="tel" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent placeholder-white/50 text-white" placeholder="+1 (000) 000-0000">
+            </div>
+            <div class="mb-6">
+              <label class="block text-sm font-medium mb-2">Message</label>
+              <textarea rows="4" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent placeholder-white/50 text-white resize-none" placeholder="Tell us about your cleaning supply needs..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-accent hover:bg-accent-light text-white py-4 rounded-xl font-semibold transition-colors">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#050a14] text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <span class="font-bold text-xl">DHG CLEANING</span>
+          </div>
+          <p class="text-gray-400 text-sm">Professional cleaning supplies for Montreal businesses since 2009.</p>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="#products" class="hover:text-accent transition-colors">Products</a></li>
+            <li><a href="#catalog" class="hover:text-accent transition-colors">Catalog</a></li>
+            <li><a href="#about" class="hover:text-accent transition-colors">About Us</a></li>
+            <li><a href="#contact" class="hover:text-accent transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Products</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="#catalog" class="hover:text-accent transition-colors">Liquid Cleaners</a></li>
+            <li><a href="#catalog" class="hover:text-accent transition-colors">Janitorial Supplies</a></li>
+            <li><a href="#catalog" class="hover:text-accent transition-colors">Paper Products</a></li>
+            <li><a href="#catalog" class="hover:text-accent transition-colors">Safety & PPE</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="mailto:jordan.jdjdj@gmail.com" class="hover:text-accent transition-colors">jordan.jdjdj@gmail.com</a></li>
+            <li><a href="tel:+14382207424" class="hover:text-accent transition-colors">+1 (438) 220-7424</a></li>
+            <li>Montreal, Quebec, Canada</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; 2024 DHG CLEANING. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/14382207424" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110 z-50">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        
+        // Update buttons
+        tabBtns.forEach(b => {
+          b.classList.remove('active', 'bg-accent', 'text-white');
+          b.classList.add('bg-white', 'text-gray-600');
+        });
+        btn.classList.add('active', 'bg-accent', 'text-white');
+        btn.classList.remove('bg-white', 'text-gray-600');
+        
+        // Update content
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        document.getElementById(tab).classList.remove('hidden');
+      });
+    });
+    
+    // Fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => observer.observe(el));
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
